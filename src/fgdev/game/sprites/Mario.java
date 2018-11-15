@@ -1,6 +1,7 @@
 package fgdev.game.sprites;
 
 import fgdev.game.Game;
+import fgdev.game.sprites.tileobjects.Block;
 import javafx.geometry.Point2D;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.Node;
