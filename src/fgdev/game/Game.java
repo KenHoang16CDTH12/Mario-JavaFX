@@ -1,6 +1,7 @@
 package fgdev.game;
 
-import fgdev.game.sprites.Block;
+import fgdev.game.common.Common;
+import fgdev.game.sprites.tileobjects.*;
 import fgdev.game.sprites.Mario;
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
@@ -39,28 +40,28 @@ public class Game extends Application {
             String line = LevelData.levels[levelNumber][i];
             for (int j = 0; j < line.length(); j++) {
                 switch (line.charAt(j)) {
-                    case '0':
+                    case Common.NOTHING:
                         break;
-                    case '1':
-                        Block platformFloor = new Block(Block.BlockType.PLATFORM, j * BLOCK_SIZE, i * BLOCK_SIZE);
+                    case Common.PLATFORM:
+                        new Platform(j * BLOCK_SIZE, i * BLOCK_SIZE);
                         break;
-                    case '2':
-                        Block brick = new Block(Block.BlockType.BRICK, j * BLOCK_SIZE, i * BLOCK_SIZE);
+                    case Common.BRICK:
+                        new Brick(j * BLOCK_SIZE, i * BLOCK_SIZE);
                         break;
-                    case '3':
-                        Block bonus = new Block(Block.BlockType.BONUS,j*BLOCK_SIZE,i*BLOCK_SIZE);
+                    case Common.BONUS:
+                        new Bonus(j * BLOCK_SIZE, i * BLOCK_SIZE);
                         break;
-                    case '4':
-                        Block stone = new Block(Block.BlockType.STONE,j * BLOCK_SIZE, i * BLOCK_SIZE);
+                    case Common.STONE:
+                        new Stone(j * BLOCK_SIZE, i * BLOCK_SIZE);
                         break;
-                    case '5':
-                        Block PipeTopBlock = new Block(Block.BlockType.PIPE_TOP,j * BLOCK_SIZE, i * BLOCK_SIZE);
+                    case Common.PIPE_TOP:
+                        new PipeTop(j * BLOCK_SIZE, i * BLOCK_SIZE);
                         break;
-                    case '6':
-                        Block PipeBottomBlock = new Block(Block.BlockType.PIPE_BOTTOM,j * BLOCK_SIZE, i * BLOCK_SIZE);
+                    case Common.PIPE_BOTTOM:
+                        new PipeBottom(j * BLOCK_SIZE, i * BLOCK_SIZE);
                         break;
-                    case '*':
-                        Block InvisibleBlock = new Block(Block.BlockType.INVISIBLE_BLOCK,j * BLOCK_SIZE, i * BLOCK_SIZE);
+                    case Common.INVISIBLEBLOCK:
+                        new InvisibleBlock(j * BLOCK_SIZE, i * BLOCK_SIZE);
                         break;
                 }
             }
